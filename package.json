@@ -1,6 +1,6 @@
 {
   "name": "@oneloop-hq/oneloop-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OpenAPI client for @oneloop-hq/oneloop-ts",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
@@ -13,7 +13,7 @@
     "openapi-client",
     "openapi-generator"
   ],
-  "license": "MIT",
+  "license": "Unlicense",
   "main": "./dist/index.js",
   "type": "commonjs",
   "exports": {

@@ -6,16 +6,16 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createApiKey**](DefaultApi.md#createApiKey) | **POST** /api/v1/api-key | Create an API key
 [**createWorkspace**](DefaultApi.md#createWorkspace) | **POST** /api/v1/workspace | Create a workspace
-[**createWorkspaceScopes**](DefaultApi.md#createWorkspaceScopes) | **POST** /api/v1/workspace/:{id}/scope | Create a workspace scope
-[**deleteApiKey**](DefaultApi.md#deleteApiKey) | **DELETE** /api/v1/workspace/:{id}/api-key/:{akid} | Delets a key for a given workspace
-[**getApiKeyById**](DefaultApi.md#getApiKeyById) | **GET** /api/v1/workspace/:{id}/api-key/:{akid} | Retrieve an API key by id
-[**getApiKeys**](DefaultApi.md#getApiKeys) | **GET** /api/v1/workspace/:{id}/api-key | Retrieve API keys for a workspace
+[**createWorkspaceScopes**](DefaultApi.md#createWorkspaceScopes) | **POST** /api/v1/workspace/{id}/scope | Create a workspace scope
+[**deleteApiKey**](DefaultApi.md#deleteApiKey) | **DELETE** /api/v1/workspace/{id}/api-key/{akid} | Delets a key for a given workspace
+[**getApiKeyById**](DefaultApi.md#getApiKeyById) | **GET** /api/v1/workspace/{id}/api-key/{akid} | Retrieve an API key by id
+[**getApiKeys**](DefaultApi.md#getApiKeys) | **GET** /api/v1/workspace/{id}/api-key | Retrieve API keys for a workspace
 [**getWorkspace**](DefaultApi.md#getWorkspace) | **GET** /api/v1/workspace | Retrieve a workspace
-[**getWorkspaceById**](DefaultApi.md#getWorkspaceById) | **GET** /api/v1/workspace/:{id} | Retrieve a workspace
-[**getWorkspaceScopes**](DefaultApi.md#getWorkspaceScopes) | **GET** /api/v1/workspace/:{id}/scopes | Retrieve workspace scopes
-[**refillApiKey**](DefaultApi.md#refillApiKey) | **POST** /api/v1/workspace/:{id}/api-key/:{akid}/refill | Refill a key for a given workspace
-[**rotateApiKey**](DefaultApi.md#rotateApiKey) | **POST** /api/v1/workspace/:{id}/api-key/:{akid}/rotate | Rotate a key for a given workspace
-[**updateWorkspace**](DefaultApi.md#updateWorkspace) | **PATCH** /api/v1/workspace/:{id} | Updates a workspace
+[**getWorkspaceById**](DefaultApi.md#getWorkspaceById) | **GET** /api/v1/workspace/{id} | Retrieve a workspace
+[**getWorkspaceScopes**](DefaultApi.md#getWorkspaceScopes) | **GET** /api/v1/workspace/{id}/scopes | Retrieve workspace scopes
+[**refillApiKey**](DefaultApi.md#refillApiKey) | **POST** /api/v1/workspace/{id}/api-key/{akid}/refill | Refill a key for a given workspace
+[**rotateApiKey**](DefaultApi.md#rotateApiKey) | **POST** /api/v1/workspace/{id}/api-key/{akid}/rotate | Rotate a key for a given workspace
+[**updateWorkspace**](DefaultApi.md#updateWorkspace) | **PATCH** /api/v1/workspace/{id} | Updates a workspace
 [**verifyApiKey**](DefaultApi.md#verifyApiKey) | **POST** /api/v1/api-key/verify | Verify a key for a given workspace
 
 

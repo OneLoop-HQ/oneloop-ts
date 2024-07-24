@@ -645,7 +645,7 @@
                 }
             }
         },
-        "/api/v1/workspace/:{id}": {
+        "/api/v1/workspace/{id}": {
             "get": {
                 "operationId": "getWorkspaceById",
                 "summary": "Retrieve a workspace",
@@ -780,7 +780,7 @@
                 }
             }
         },
-        "/api/v1/workspace/:{id}/scopes": {
+        "/api/v1/workspace/{id}/scopes": {
             "get": {
                 "operationId": "getWorkspaceScopes",
                 "summary": "Retrieve workspace scopes",
@@ -844,7 +844,7 @@
                 }
             }
         },
-        "/api/v1/workspace/:{id}/scope": {
+        "/api/v1/workspace/{id}/scope": {
             "post": {
                 "operationId": "createWorkspaceScopes",
                 "summary": "Create a workspace scope",
@@ -979,7 +979,7 @@
                 }
             }
         },
-        "/api/v1/workspace/:{id}/api-key": {
+        "/api/v1/workspace/{id}/api-key": {
             "get": {
                 "operationId": "getApiKeys",
                 "summary": "Retrieve API keys for a workspace",
@@ -1043,7 +1043,7 @@
                 }
             }
         },
-        "/api/v1/workspace/:{id}/api-key/:{akid}": {
+        "/api/v1/workspace/{id}/api-key/{akid}": {
             "get": {
                 "operationId": "getApiKeyById",
                 "summary": "Retrieve an API key by id",
@@ -1249,7 +1249,7 @@
                 }
             }
         },
-        "/api/v1/workspace/:{id}/api-key/:{akid}/rotate": {
+        "/api/v1/workspace/{id}/api-key/{akid}/rotate": {
             "post": {
                 "operationId": "rotateApiKey",
                 "summary": "Rotate a key for a given workspace",
@@ -1322,7 +1322,7 @@
                 }
             }
         },
-        "/api/v1/workspace/:{id}/api-key/:{akid}/refill": {
+        "/api/v1/workspace/{id}/api-key/{akid}/refill": {
             "post": {
                 "operationId": "refillApiKey",
                 "summary": "Refill a key for a given workspace",

@@ -133,7 +133,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/api/v1/workspace/:{id}/scope'
+        const localVarPath = '/api/v1/workspace/{id}/scope'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
 
         // Make Request Context
@@ -188,7 +188,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/api/v1/workspace/:{id}/api-key/:{akid}'
+        const localVarPath = '/api/v1/workspace/{id}/api-key/{akid}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)))
             .replace('{' + 'akid' + '}', encodeURIComponent(String(akid)));
 
@@ -233,7 +233,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/api/v1/workspace/:{id}/api-key/:{akid}'
+        const localVarPath = '/api/v1/workspace/{id}/api-key/{akid}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)))
             .replace('{' + 'akid' + '}', encodeURIComponent(String(akid)));
 
@@ -271,7 +271,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/api/v1/workspace/:{id}/api-key'
+        const localVarPath = '/api/v1/workspace/{id}/api-key'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
 
         // Make Request Context
@@ -337,7 +337,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/api/v1/workspace/:{id}'
+        const localVarPath = '/api/v1/workspace/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
 
         // Make Request Context
@@ -374,7 +374,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/api/v1/workspace/:{id}/scopes'
+        const localVarPath = '/api/v1/workspace/{id}/scopes'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
 
         // Make Request Context
@@ -420,7 +420,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/api/v1/workspace/:{id}/api-key/:{akid}/refill'
+        const localVarPath = '/api/v1/workspace/{id}/api-key/{akid}/refill'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)))
             .replace('{' + 'akid' + '}', encodeURIComponent(String(akid)));
 
@@ -476,7 +476,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/api/v1/workspace/:{id}/api-key/:{akid}/rotate'
+        const localVarPath = '/api/v1/workspace/{id}/api-key/{akid}/rotate'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)))
             .replace('{' + 'akid' + '}', encodeURIComponent(String(akid)));
 
@@ -516,7 +516,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/api/v1/workspace/:{id}'
+        const localVarPath = '/api/v1/workspace/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
 
         // Make Request Context
