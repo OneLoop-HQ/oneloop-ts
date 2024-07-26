@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { ApiKeyScope } from '../models/ApiKeyScope';
+import { CreateApiKeyRequestScopesInner } from '../models/CreateApiKeyRequestScopesInner';
 import { HttpFile } from '../http/http';
 
 export class CreateApiKeyRequest {
@@ -19,8 +19,9 @@ export class CreateApiKeyRequest {
     'prefix'?: string;
     'expiresAt'?: number;
     'totalUsageAllowed'?: number;
-    'scopes': Array<ApiKeyScope>;
+    'scopes': Array<CreateApiKeyRequestScopesInner>;
     'enabled': boolean;
+    'customerId': string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -58,13 +59,19 @@ export class CreateApiKeyRequest {
         {
             "name": "scopes",
             "baseName": "scopes",
-            "type": "Array<ApiKeyScope>",
+            "type": "Array<CreateApiKeyRequestScopesInner>",
             "format": ""
         },
         {
             "name": "enabled",
             "baseName": "enabled",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "customerId",
+            "baseName": "customerId",
+            "type": "string",
             "format": ""
         }    ];
 

@@ -11,38 +11,37 @@
  */
 
 import { ApiKeyScope } from '../models/ApiKeyScope';
-import { VerifyApiKeyRequestRateLimitConfig } from '../models/VerifyApiKeyRequestRateLimitConfig';
 import { HttpFile } from '../http/http';
 
-export class VerifyApiKeyRequest {
-    'key': string;
-    'requestedScopes': Array<ApiKeyScope>;
-    'rateLimitConfig'?: VerifyApiKeyRequestRateLimitConfig;
+export class EditApiKeyRequest {
+    'name'?: string;
+    'enabled'?: boolean;
+    'scopes'?: Array<ApiKeyScope>;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
+            "name": "name",
+            "baseName": "name",
             "type": "string",
             "format": ""
         },
         {
-            "name": "requestedScopes",
-            "baseName": "requestedScopes",
-            "type": "Array<ApiKeyScope>",
+            "name": "enabled",
+            "baseName": "enabled",
+            "type": "boolean",
             "format": ""
         },
         {
-            "name": "rateLimitConfig",
-            "baseName": "rateLimitConfig",
-            "type": "VerifyApiKeyRequestRateLimitConfig",
+            "name": "scopes",
+            "baseName": "scopes",
+            "type": "Array<ApiKeyScope>",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return VerifyApiKeyRequest.attributeTypeMap;
+        return EditApiKeyRequest.attributeTypeMap;
     }
 
     public constructor() {

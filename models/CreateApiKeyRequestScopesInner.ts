@@ -12,8 +12,7 @@
 
 import { HttpFile } from '../http/http';
 
-export class ApiKeyScope {
-    'id': string;
+export class CreateApiKeyRequestScopesInner {
     'representation': string;
     'create': boolean;
     'read': boolean;
@@ -23,12 +22,6 @@ export class ApiKeyScope {
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "id",
-            "baseName": "id",
-            "type": "string",
-            "format": ""
-        },
         {
             "name": "representation",
             "baseName": "representation",
@@ -61,7 +54,7 @@ export class ApiKeyScope {
         }    ];
 
     static getAttributeTypeMap() {
-        return ApiKeyScope.attributeTypeMap;
+        return CreateApiKeyRequestScopesInner.attributeTypeMap;
     }
 
     public constructor() {

@@ -18,6 +18,7 @@ export class Workspace {
     'teamId': string;
     'defaultKeyPrefix': string | null;
     'defaultAllowedIPs': Array<string>;
+    'defaultRateLimitPerSecond': number | null;
     'defaultExpiration': number | null;
     'createdAt': string;
     'updatedAt': string;
@@ -53,6 +54,12 @@ export class Workspace {
             "name": "defaultAllowedIPs",
             "baseName": "defaultAllowedIPs",
             "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "defaultRateLimitPerSecond",
+            "baseName": "defaultRateLimitPerSecond",
+            "type": "number",
             "format": ""
         },
         {

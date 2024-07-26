@@ -11,12 +11,14 @@
  */
 
 import { ApiKeyScope } from '../models/ApiKeyScope';
+import { VerifyApiKeyResponseRateLimit } from '../models/VerifyApiKeyResponseRateLimit';
 import { HttpFile } from '../http/http';
 
 export class VerifyApiKeyResponse {
     'expiresAt': number | null;
     'requestedScopes': Array<ApiKeyScope>;
     'status': VerifyApiKeyResponseStatusEnum;
+    'rateLimit'?: VerifyApiKeyResponseRateLimit;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,6 +39,12 @@ export class VerifyApiKeyResponse {
             "name": "status",
             "baseName": "status",
             "type": "VerifyApiKeyResponseStatusEnum",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rateLimit",
+            "type": "VerifyApiKeyResponseRateLimit",
             "format": ""
         }    ];
 

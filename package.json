@@ -1,6 +1,6 @@
 {
   "name": "@oneloop-hq/oneloop-ts",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "OpenAPI client for @oneloop-hq/oneloop-ts",
   "author": "OpenAPI-Generator Contributors",
   "repository": {

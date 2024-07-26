@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**createWorkspace**](DefaultApi.md#createWorkspace) | **POST** /api/v1/workspace | Create a workspace
 [**createWorkspaceScopes**](DefaultApi.md#createWorkspaceScopes) | **POST** /api/v1/workspace/{id}/scope | Create a workspace scope
 [**deleteApiKey**](DefaultApi.md#deleteApiKey) | **DELETE** /api/v1/workspace/{id}/api-key/{akid} | Delets a key for a given workspace
+[**editApiKey**](DefaultApi.md#editApiKey) | **PATCH** /api/v1/workspace/{id}/api-key/{akid} | Edit an API key
+[**generateLinkToken**](DefaultApi.md#generateLinkToken) | **POST** /api/v1/link-token | Generate a link token
 [**getApiKeyById**](DefaultApi.md#getApiKeyById) | **GET** /api/v1/workspace/{id}/api-key/{akid} | Retrieve an API key by id
 [**getApiKeys**](DefaultApi.md#getApiKeys) | **GET** /api/v1/workspace/{id}/api-key | Retrieve API keys for a workspace
 [**getWorkspace**](DefaultApi.md#getWorkspace) | **GET** /api/v1/workspace | Retrieve a workspace
@@ -16,6 +18,7 @@ Method | HTTP request | Description
 [**refillApiKey**](DefaultApi.md#refillApiKey) | **POST** /api/v1/workspace/{id}/api-key/{akid}/refill | Refill a key for a given workspace
 [**rotateApiKey**](DefaultApi.md#rotateApiKey) | **POST** /api/v1/workspace/{id}/api-key/{akid}/rotate | Rotate a key for a given workspace
 [**updateWorkspace**](DefaultApi.md#updateWorkspace) | **PATCH** /api/v1/workspace/{id} | Updates a workspace
+[**validateLinkToken**](DefaultApi.md#validateLinkToken) | **GET** /api/v1/link-token | Validate a link token
 [**verifyApiKey**](DefaultApi.md#verifyApiKey) | **POST** /api/v1/api-key/verify | Verify a key for a given workspace
 
 
@@ -51,6 +54,7 @@ let body:.DefaultApiCreateApiKeyRequest = {
       },
     ],
     enabled: true,
+    customerId: "customerId_example",
   },
 };
 
@@ -265,6 +269,140 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The updated deleted key |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **editApiKey**
+> EditApiKeyResponse editApiKey()
+
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .DefaultApi(configuration);
+
+let body:.DefaultApiEditApiKeyRequest = {
+  // string
+  id: "id_example",
+  // string
+  akid: "akid_example",
+  // EditApiKeyRequest (optional)
+  editApiKeyRequest: {
+    name: "name_example",
+    enabled: true,
+    scopes: [
+      {
+        id: "id_example",
+        representation: "representation_example",
+        create: true,
+        read: true,
+        update: true,
+        del: true,
+      },
+    ],
+  },
+};
+
+apiInstance.editApiKey(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **editApiKeyRequest** | **EditApiKeyRequest**|  |
+ **id** | [**string**] |  | defaults to undefined
+ **akid** | [**string**] |  | defaults to undefined
+
+
+### Return type
+
+**EditApiKeyResponse**
+
+### Authorization
+
+[bearerAuth](README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The edited key |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **generateLinkToken**
+> GenerateLinkToken200Response generateLinkToken()
+
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .DefaultApi(configuration);
+
+let body:.DefaultApiGenerateLinkTokenRequest = {
+  // GenerateLinkTokenRequest (optional)
+  generateLinkTokenRequest: {
+    customerId: "customerId_example",
+    workspaceId: "workspaceId_example",
+  },
+};
+
+apiInstance.generateLinkToken(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generateLinkTokenRequest** | **GenerateLinkTokenRequest**|  |
+
+
+### Return type
+
+**GenerateLinkToken200Response**
+
+### Authorization
+
+[bearerAuth](README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The generated link token |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
@@ -698,6 +836,7 @@ let body:.DefaultApiUpdateWorkspaceRequest = {
       defaultAllowedIPs: [
         "defaultAllowedIPs_example",
       ],
+      defaultRateLimitPerSecond: 0,
       defaultExpiration: 0,
       createdAt: "createdAt_example",
       updatedAt: "updatedAt_example",
@@ -743,6 +882,62 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **validateLinkToken**
+> ValidateLinkToken200Response validateLinkToken()
+
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .DefaultApi(configuration);
+
+let body:.DefaultApiValidateLinkTokenRequest = {
+  // string
+  token: "token_example",
+};
+
+apiInstance.validateLinkToken(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | [**string**] |  | defaults to undefined
+
+
+### Return type
+
+**ValidateLinkToken200Response**
+
+### Authorization
+
+[bearerAuth](README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The validation result |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **verifyApiKey**
 > VerifyApiKeyResponse verifyApiKey()
 
@@ -760,10 +955,10 @@ const apiInstance = new .DefaultApi(configuration);
 let body:.DefaultApiVerifyApiKeyRequest = {
   // VerifyApiKeyRequest (optional)
   verifyApiKeyRequest: {
-    workspaceId: "workspaceId_example",
     key: "key_example",
     requestedScopes: [
       {
+        id: "id_example",
         representation: "representation_example",
         create: true,
         read: true,
@@ -771,6 +966,10 @@ let body:.DefaultApiVerifyApiKeyRequest = {
         del: true,
       },
     ],
+    rateLimitConfig: {
+      id: "id_example",
+      limit: 0,
+    },
   },
 };
 

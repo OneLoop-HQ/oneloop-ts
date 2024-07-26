@@ -4,6 +4,7 @@ import { Configuration} from '../configuration'
 import { ApiKey } from '../models/ApiKey';
 import { ApiKeyScope } from '../models/ApiKeyScope';
 import { CreateApiKeyRequest } from '../models/CreateApiKeyRequest';
+import { CreateApiKeyRequestScopesInner } from '../models/CreateApiKeyRequestScopesInner';
 import { CreateApiKeyResponse } from '../models/CreateApiKeyResponse';
 import { CreateApiKeyResponseApiKey } from '../models/CreateApiKeyResponseApiKey';
 import { CreateWorkspaceRequest } from '../models/CreateWorkspaceRequest';
@@ -11,8 +12,12 @@ import { CreateWorkspaceResponse } from '../models/CreateWorkspaceResponse';
 import { CreateWorkspaceScopeRequest } from '../models/CreateWorkspaceScopeRequest';
 import { CreateWorkspaceScopeResponse } from '../models/CreateWorkspaceScopeResponse';
 import { DeleteApiKeyResponse } from '../models/DeleteApiKeyResponse';
+import { EditApiKeyRequest } from '../models/EditApiKeyRequest';
+import { EditApiKeyResponse } from '../models/EditApiKeyResponse';
 import { ErrorResponse } from '../models/ErrorResponse';
 import { ErrorResponseError } from '../models/ErrorResponseError';
+import { GenerateLinkToken200Response } from '../models/GenerateLinkToken200Response';
+import { GenerateLinkTokenRequest } from '../models/GenerateLinkTokenRequest';
 import { RefillApiKeyRequest } from '../models/RefillApiKeyRequest';
 import { RefillApiKeyResponse } from '../models/RefillApiKeyResponse';
 import { RetrieveAllWorkspaceScopesResponse } from '../models/RetrieveAllWorkspaceScopesResponse';
@@ -22,8 +27,11 @@ import { RetrieveWorkspaceByIdResponse } from '../models/RetrieveWorkspaceByIdRe
 import { RetrieveWorkspaceResponse } from '../models/RetrieveWorkspaceResponse';
 import { RotateApiKeyResponse } from '../models/RotateApiKeyResponse';
 import { UpdateWorkspaceResponse } from '../models/UpdateWorkspaceResponse';
+import { ValidateLinkToken200Response } from '../models/ValidateLinkToken200Response';
 import { VerifyApiKeyRequest } from '../models/VerifyApiKeyRequest';
+import { VerifyApiKeyRequestRateLimitConfig } from '../models/VerifyApiKeyRequestRateLimitConfig';
 import { VerifyApiKeyResponse } from '../models/VerifyApiKeyResponse';
+import { VerifyApiKeyResponseRateLimit } from '../models/VerifyApiKeyResponseRateLimit';
 import { Workspace } from '../models/Workspace';
 import { WorkspaceScope } from '../models/WorkspaceScope';
 
@@ -76,6 +84,36 @@ export interface DefaultApiDeleteApiKeyRequest {
      * @memberof DefaultApideleteApiKey
      */
     akid: string
+}
+
+export interface DefaultApiEditApiKeyRequest {
+    /**
+     * 
+     * @type string
+     * @memberof DefaultApieditApiKey
+     */
+    id: string
+    /**
+     * 
+     * @type string
+     * @memberof DefaultApieditApiKey
+     */
+    akid: string
+    /**
+     * 
+     * @type EditApiKeyRequest
+     * @memberof DefaultApieditApiKey
+     */
+    editApiKeyRequest?: EditApiKeyRequest
+}
+
+export interface DefaultApiGenerateLinkTokenRequest {
+    /**
+     * 
+     * @type GenerateLinkTokenRequest
+     * @memberof DefaultApigenerateLinkToken
+     */
+    generateLinkTokenRequest?: GenerateLinkTokenRequest
 }
 
 export interface DefaultApiGetApiKeyByIdRequest {
@@ -174,6 +212,15 @@ export interface DefaultApiUpdateWorkspaceRequest {
     updateWorkspaceResponse?: UpdateWorkspaceResponse
 }
 
+export interface DefaultApiValidateLinkTokenRequest {
+    /**
+     * 
+     * @type string
+     * @memberof DefaultApivalidateLinkToken
+     */
+    token: string
+}
+
 export interface DefaultApiVerifyApiKeyRequest {
     /**
      * 
@@ -252,6 +299,38 @@ export class ObjectDefaultApi {
      */
     public deleteApiKey(param: DefaultApiDeleteApiKeyRequest, options?: Configuration): Promise<DeleteApiKeyResponse> {
         return this.api.deleteApiKey(param.id, param.akid,  options).toPromise();
+    }
+
+    /**
+     * Edit an API key
+     * @param param the request object
+     */
+    public editApiKeyWithHttpInfo(param: DefaultApiEditApiKeyRequest, options?: Configuration): Promise<HttpInfo<EditApiKeyResponse>> {
+        return this.api.editApiKeyWithHttpInfo(param.id, param.akid, param.editApiKeyRequest,  options).toPromise();
+    }
+
+    /**
+     * Edit an API key
+     * @param param the request object
+     */
+    public editApiKey(param: DefaultApiEditApiKeyRequest, options?: Configuration): Promise<EditApiKeyResponse> {
+        return this.api.editApiKey(param.id, param.akid, param.editApiKeyRequest,  options).toPromise();
+    }
+
+    /**
+     * Generate a link token
+     * @param param the request object
+     */
+    public generateLinkTokenWithHttpInfo(param: DefaultApiGenerateLinkTokenRequest = {}, options?: Configuration): Promise<HttpInfo<GenerateLinkToken200Response>> {
+        return this.api.generateLinkTokenWithHttpInfo(param.generateLinkTokenRequest,  options).toPromise();
+    }
+
+    /**
+     * Generate a link token
+     * @param param the request object
+     */
+    public generateLinkToken(param: DefaultApiGenerateLinkTokenRequest = {}, options?: Configuration): Promise<GenerateLinkToken200Response> {
+        return this.api.generateLinkToken(param.generateLinkTokenRequest,  options).toPromise();
     }
 
     /**
@@ -380,6 +459,22 @@ export class ObjectDefaultApi {
      */
     public updateWorkspace(param: DefaultApiUpdateWorkspaceRequest, options?: Configuration): Promise<UpdateWorkspaceResponse> {
         return this.api.updateWorkspace(param.id, param.updateWorkspaceResponse,  options).toPromise();
+    }
+
+    /**
+     * Validate a link token
+     * @param param the request object
+     */
+    public validateLinkTokenWithHttpInfo(param: DefaultApiValidateLinkTokenRequest, options?: Configuration): Promise<HttpInfo<ValidateLinkToken200Response>> {
+        return this.api.validateLinkTokenWithHttpInfo(param.token,  options).toPromise();
+    }
+
+    /**
+     * Validate a link token
+     * @param param the request object
+     */
+    public validateLinkToken(param: DefaultApiValidateLinkTokenRequest, options?: Configuration): Promise<ValidateLinkToken200Response> {
+        return this.api.validateLinkToken(param.token,  options).toPromise();
     }
 
     /**

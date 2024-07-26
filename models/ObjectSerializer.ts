@@ -1,6 +1,7 @@
 export * from '../models/ApiKey';
 export * from '../models/ApiKeyScope';
 export * from '../models/CreateApiKeyRequest';
+export * from '../models/CreateApiKeyRequestScopesInner';
 export * from '../models/CreateApiKeyResponse';
 export * from '../models/CreateApiKeyResponseApiKey';
 export * from '../models/CreateWorkspaceRequest';
@@ -8,8 +9,12 @@ export * from '../models/CreateWorkspaceResponse';
 export * from '../models/CreateWorkspaceScopeRequest';
 export * from '../models/CreateWorkspaceScopeResponse';
 export * from '../models/DeleteApiKeyResponse';
+export * from '../models/EditApiKeyRequest';
+export * from '../models/EditApiKeyResponse';
 export * from '../models/ErrorResponse';
 export * from '../models/ErrorResponseError';
+export * from '../models/GenerateLinkToken200Response';
+export * from '../models/GenerateLinkTokenRequest';
 export * from '../models/RefillApiKeyRequest';
 export * from '../models/RefillApiKeyResponse';
 export * from '../models/RetrieveAllWorkspaceScopesResponse';
@@ -19,14 +24,18 @@ export * from '../models/RetrieveWorkspaceByIdResponse';
 export * from '../models/RetrieveWorkspaceResponse';
 export * from '../models/RotateApiKeyResponse';
 export * from '../models/UpdateWorkspaceResponse';
+export * from '../models/ValidateLinkToken200Response';
 export * from '../models/VerifyApiKeyRequest';
+export * from '../models/VerifyApiKeyRequestRateLimitConfig';
 export * from '../models/VerifyApiKeyResponse';
+export * from '../models/VerifyApiKeyResponseRateLimit';
 export * from '../models/Workspace';
 export * from '../models/WorkspaceScope';
 
 import { ApiKey } from '../models/ApiKey';
 import { ApiKeyScope } from '../models/ApiKeyScope';
 import { CreateApiKeyRequest } from '../models/CreateApiKeyRequest';
+import { CreateApiKeyRequestScopesInner } from '../models/CreateApiKeyRequestScopesInner';
 import { CreateApiKeyResponse } from '../models/CreateApiKeyResponse';
 import { CreateApiKeyResponseApiKey } from '../models/CreateApiKeyResponseApiKey';
 import { CreateWorkspaceRequest } from '../models/CreateWorkspaceRequest';
@@ -34,8 +43,12 @@ import { CreateWorkspaceResponse } from '../models/CreateWorkspaceResponse';
 import { CreateWorkspaceScopeRequest } from '../models/CreateWorkspaceScopeRequest';
 import { CreateWorkspaceScopeResponse } from '../models/CreateWorkspaceScopeResponse';
 import { DeleteApiKeyResponse } from '../models/DeleteApiKeyResponse';
+import { EditApiKeyRequest } from '../models/EditApiKeyRequest';
+import { EditApiKeyResponse } from '../models/EditApiKeyResponse';
 import { ErrorResponse } from '../models/ErrorResponse';
 import { ErrorResponseError } from '../models/ErrorResponseError';
+import { GenerateLinkToken200Response } from '../models/GenerateLinkToken200Response';
+import { GenerateLinkTokenRequest } from '../models/GenerateLinkTokenRequest';
 import { RefillApiKeyRequest } from '../models/RefillApiKeyRequest';
 import { RefillApiKeyResponse } from '../models/RefillApiKeyResponse';
 import { RetrieveAllWorkspaceScopesResponse } from '../models/RetrieveAllWorkspaceScopesResponse';
@@ -45,8 +58,11 @@ import { RetrieveWorkspaceByIdResponse } from '../models/RetrieveWorkspaceByIdRe
 import { RetrieveWorkspaceResponse } from '../models/RetrieveWorkspaceResponse';
 import { RotateApiKeyResponse } from '../models/RotateApiKeyResponse';
 import { UpdateWorkspaceResponse } from '../models/UpdateWorkspaceResponse';
+import { ValidateLinkToken200Response } from '../models/ValidateLinkToken200Response';
 import { VerifyApiKeyRequest } from '../models/VerifyApiKeyRequest';
-import { VerifyApiKeyResponse  , VerifyApiKeyResponseStatusEnum   } from '../models/VerifyApiKeyResponse';
+import { VerifyApiKeyRequestRateLimitConfig } from '../models/VerifyApiKeyRequestRateLimitConfig';
+import { VerifyApiKeyResponse  , VerifyApiKeyResponseStatusEnum    } from '../models/VerifyApiKeyResponse';
+import { VerifyApiKeyResponseRateLimit } from '../models/VerifyApiKeyResponseRateLimit';
 import { Workspace } from '../models/Workspace';
 import { WorkspaceScope } from '../models/WorkspaceScope';
 
@@ -70,6 +86,7 @@ let typeMap: {[index: string]: any} = {
     "ApiKey": ApiKey,
     "ApiKeyScope": ApiKeyScope,
     "CreateApiKeyRequest": CreateApiKeyRequest,
+    "CreateApiKeyRequestScopesInner": CreateApiKeyRequestScopesInner,
     "CreateApiKeyResponse": CreateApiKeyResponse,
     "CreateApiKeyResponseApiKey": CreateApiKeyResponseApiKey,
     "CreateWorkspaceRequest": CreateWorkspaceRequest,
@@ -77,8 +94,12 @@ let typeMap: {[index: string]: any} = {
     "CreateWorkspaceScopeRequest": CreateWorkspaceScopeRequest,
     "CreateWorkspaceScopeResponse": CreateWorkspaceScopeResponse,
     "DeleteApiKeyResponse": DeleteApiKeyResponse,
+    "EditApiKeyRequest": EditApiKeyRequest,
+    "EditApiKeyResponse": EditApiKeyResponse,
     "ErrorResponse": ErrorResponse,
     "ErrorResponseError": ErrorResponseError,
+    "GenerateLinkToken200Response": GenerateLinkToken200Response,
+    "GenerateLinkTokenRequest": GenerateLinkTokenRequest,
     "RefillApiKeyRequest": RefillApiKeyRequest,
     "RefillApiKeyResponse": RefillApiKeyResponse,
     "RetrieveAllWorkspaceScopesResponse": RetrieveAllWorkspaceScopesResponse,
@@ -88,8 +109,11 @@ let typeMap: {[index: string]: any} = {
     "RetrieveWorkspaceResponse": RetrieveWorkspaceResponse,
     "RotateApiKeyResponse": RotateApiKeyResponse,
     "UpdateWorkspaceResponse": UpdateWorkspaceResponse,
+    "ValidateLinkToken200Response": ValidateLinkToken200Response,
     "VerifyApiKeyRequest": VerifyApiKeyRequest,
+    "VerifyApiKeyRequestRateLimitConfig": VerifyApiKeyRequestRateLimitConfig,
     "VerifyApiKeyResponse": VerifyApiKeyResponse,
+    "VerifyApiKeyResponseRateLimit": VerifyApiKeyResponseRateLimit,
     "Workspace": Workspace,
     "WorkspaceScope": WorkspaceScope,
 }

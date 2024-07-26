@@ -23,6 +23,7 @@ export class CreateApiKeyResponseApiKey {
     'limitUsage': boolean;
     'scopes': Array<ApiKeyScope>;
     'enabled': boolean;
+    'customerId': string | null;
     'deleted': boolean;
     'createdAt': string;
     'updatedAt': string;
@@ -83,6 +84,12 @@ export class CreateApiKeyResponseApiKey {
             "name": "enabled",
             "baseName": "enabled",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "customerId",
+            "baseName": "customerId",
+            "type": "string",
             "format": ""
         },
         {

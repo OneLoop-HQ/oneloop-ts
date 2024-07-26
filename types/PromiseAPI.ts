@@ -4,6 +4,7 @@ import { Configuration} from '../configuration'
 import { ApiKey } from '../models/ApiKey';
 import { ApiKeyScope } from '../models/ApiKeyScope';
 import { CreateApiKeyRequest } from '../models/CreateApiKeyRequest';
+import { CreateApiKeyRequestScopesInner } from '../models/CreateApiKeyRequestScopesInner';
 import { CreateApiKeyResponse } from '../models/CreateApiKeyResponse';
 import { CreateApiKeyResponseApiKey } from '../models/CreateApiKeyResponseApiKey';
 import { CreateWorkspaceRequest } from '../models/CreateWorkspaceRequest';
@@ -11,8 +12,12 @@ import { CreateWorkspaceResponse } from '../models/CreateWorkspaceResponse';
 import { CreateWorkspaceScopeRequest } from '../models/CreateWorkspaceScopeRequest';
 import { CreateWorkspaceScopeResponse } from '../models/CreateWorkspaceScopeResponse';
 import { DeleteApiKeyResponse } from '../models/DeleteApiKeyResponse';
+import { EditApiKeyRequest } from '../models/EditApiKeyRequest';
+import { EditApiKeyResponse } from '../models/EditApiKeyResponse';
 import { ErrorResponse } from '../models/ErrorResponse';
 import { ErrorResponseError } from '../models/ErrorResponseError';
+import { GenerateLinkToken200Response } from '../models/GenerateLinkToken200Response';
+import { GenerateLinkTokenRequest } from '../models/GenerateLinkTokenRequest';
 import { RefillApiKeyRequest } from '../models/RefillApiKeyRequest';
 import { RefillApiKeyResponse } from '../models/RefillApiKeyResponse';
 import { RetrieveAllWorkspaceScopesResponse } from '../models/RetrieveAllWorkspaceScopesResponse';
@@ -22,8 +27,11 @@ import { RetrieveWorkspaceByIdResponse } from '../models/RetrieveWorkspaceByIdRe
 import { RetrieveWorkspaceResponse } from '../models/RetrieveWorkspaceResponse';
 import { RotateApiKeyResponse } from '../models/RotateApiKeyResponse';
 import { UpdateWorkspaceResponse } from '../models/UpdateWorkspaceResponse';
+import { ValidateLinkToken200Response } from '../models/ValidateLinkToken200Response';
 import { VerifyApiKeyRequest } from '../models/VerifyApiKeyRequest';
+import { VerifyApiKeyRequestRateLimitConfig } from '../models/VerifyApiKeyRequestRateLimitConfig';
 import { VerifyApiKeyResponse } from '../models/VerifyApiKeyResponse';
+import { VerifyApiKeyResponseRateLimit } from '../models/VerifyApiKeyResponseRateLimit';
 import { Workspace } from '../models/Workspace';
 import { WorkspaceScope } from '../models/WorkspaceScope';
 import { ObservableDefaultApi } from './ObservableAPI';
@@ -113,6 +121,46 @@ export class PromiseDefaultApi {
      */
     public deleteApiKey(id: string, akid: string, _options?: Configuration): Promise<DeleteApiKeyResponse> {
         const result = this.api.deleteApiKey(id, akid, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Edit an API key
+     * @param id 
+     * @param akid 
+     * @param editApiKeyRequest 
+     */
+    public editApiKeyWithHttpInfo(id: string, akid: string, editApiKeyRequest?: EditApiKeyRequest, _options?: Configuration): Promise<HttpInfo<EditApiKeyResponse>> {
+        const result = this.api.editApiKeyWithHttpInfo(id, akid, editApiKeyRequest, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Edit an API key
+     * @param id 
+     * @param akid 
+     * @param editApiKeyRequest 
+     */
+    public editApiKey(id: string, akid: string, editApiKeyRequest?: EditApiKeyRequest, _options?: Configuration): Promise<EditApiKeyResponse> {
+        const result = this.api.editApiKey(id, akid, editApiKeyRequest, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Generate a link token
+     * @param generateLinkTokenRequest 
+     */
+    public generateLinkTokenWithHttpInfo(generateLinkTokenRequest?: GenerateLinkTokenRequest, _options?: Configuration): Promise<HttpInfo<GenerateLinkToken200Response>> {
+        const result = this.api.generateLinkTokenWithHttpInfo(generateLinkTokenRequest, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Generate a link token
+     * @param generateLinkTokenRequest 
+     */
+    public generateLinkToken(generateLinkTokenRequest?: GenerateLinkTokenRequest, _options?: Configuration): Promise<GenerateLinkToken200Response> {
+        const result = this.api.generateLinkToken(generateLinkTokenRequest, _options);
         return result.toPromise();
     }
 
@@ -265,6 +313,24 @@ export class PromiseDefaultApi {
      */
     public updateWorkspace(id: string, updateWorkspaceResponse?: UpdateWorkspaceResponse, _options?: Configuration): Promise<UpdateWorkspaceResponse> {
         const result = this.api.updateWorkspace(id, updateWorkspaceResponse, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Validate a link token
+     * @param token 
+     */
+    public validateLinkTokenWithHttpInfo(token: string, _options?: Configuration): Promise<HttpInfo<ValidateLinkToken200Response>> {
+        const result = this.api.validateLinkTokenWithHttpInfo(token, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Validate a link token
+     * @param token 
+     */
+    public validateLinkToken(token: string, _options?: Configuration): Promise<ValidateLinkToken200Response> {
+        const result = this.api.validateLinkToken(token, _options);
         return result.toPromise();
     }
 
